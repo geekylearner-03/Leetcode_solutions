@@ -27,6 +27,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0300-longest-increasing-subsequence](https://github.com/geekylearner-03/Leetcode_solutions/tree/master/0300-longest-increasing-subsequence) |
+| [0417-pacific-atlantic-water-flow](https://github.com/geekylearner-03/Leetcode_solutions/tree/master/0417-pacific-atlantic-water-flow) |
 ## Binary Search
 |  |
 | ------- |
@@ -35,4 +36,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0300-longest-increasing-subsequence](https://github.com/geekylearner-03/Leetcode_solutions/tree/master/0300-longest-increasing-subsequence) |
+## Depth-First Search
+|  |
+| ------- |
+| [0417-pacific-atlantic-water-flow](https://github.com/geekylearner-03/Leetcode_solutions/tree/master/0417-pacific-atlantic-water-flow) |
+## Breadth-First Search
+|  |
+| ------- |
+| [0417-pacific-atlantic-water-flow](https://github.com/geekylearner-03/Leetcode_solutions/tree/master/0417-pacific-atlantic-water-flow) |
+## Matrix
+|  |
+| ------- |
+| [0417-pacific-atlantic-water-flow](https://github.com/geekylearner-03/Leetcode_solutions/tree/master/0417-pacific-atlantic-water-flow) |
 <!---LeetCode Topics End-->
