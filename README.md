@@ -23,4 +23,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0295-find-median-from-data-stream](https://github.com/geekylearner-03/Leetcode_solutions/tree/master/0295-find-median-from-data-stream) |
+## Array
+|  |
+| ------- |
+| [0300-longest-increasing-subsequence](https://github.com/geekylearner-03/Leetcode_solutions/tree/master/0300-longest-increasing-subsequence) |
+## Binary Search
+|  |
+| ------- |
+| [0300-longest-increasing-subsequence](https://github.com/geekylearner-03/Leetcode_solutions/tree/master/0300-longest-increasing-subsequence) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0300-longest-increasing-subsequence](https://github.com/geekylearner-03/Leetcode_solutions/tree/master/0300-longest-increasing-subsequence) |
 <!---LeetCode Topics End-->
