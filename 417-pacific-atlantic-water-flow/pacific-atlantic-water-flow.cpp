@@ -28,7 +28,8 @@ public:
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 
-                if (pacific[i][j] && atlantic[i][j]) // agar uss particular point se dono oceans mai jaa paa rahe hai
+                if (pacific[i][j] && atlantic[i][j]) // agar uss particular point se dono oceans mai 
+                                                    //jaa paa rahe hai
                     ans.push_back({i,j});           // toh answer push kardo
             }
         }
