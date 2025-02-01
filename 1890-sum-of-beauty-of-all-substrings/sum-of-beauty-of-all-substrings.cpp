@@ -1,24 +1,21 @@
 class Solution {
 public:
+    int ans = 0;
     int beautySum(string s) {
-        int ans = 0;
-        int n = s.length();
 
-        for (int i = 0; i < n; i++) {
-            vector<int> freq(26, 0); // Frequency map for characters
-            multiset<int> freqSet;   // To track frequencies
+        for (int i = 0; i < s.length(); i++) {
+            map<char, int> mp;
+            for (int j = i; j < s.length(); j++) {
+                // counting the frequency of each character
+                mp[s[j]]++;
 
-            for (int j = i; j < n; j++) {
-                char c = s[j];
-                if (freq[c - 'a'] > 0) {
-                    freqSet.erase(freqSet.find(freq[c - 'a'])); // Remove old frequency
+                int leastFrequent = INT_MAX;
+                int mostFrequent = INT_MIN;
+                // Finding most frequent and least frequent chracter
+                for (auto it : mp) {
+                    leastFrequent = min(leastFrequent, it.second);
+                    mostFrequent = max(mostFrequent, it.second);
                 }
-                freq[c - 'a']++; // Update frequency
-                freqSet.insert(freq[c - 'a']); // Insert new frequency
-
-                // Beauty of the current substring
-                int leastFrequent = *freqSet.begin();
-                int mostFrequent = *freqSet.rbegin();
                 ans += mostFrequent - leastFrequent;
             }
         }
