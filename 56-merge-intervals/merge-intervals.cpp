@@ -13,12 +13,11 @@ public:
             } 
             else{
                 temp.push_back(first);
-                 first = intervals[i];
-                 
-            
-    }}
-      temp.push_back(first);
-           return temp;      }
+                 first = intervals[i];        
+            }
+        }
         
-    
+        temp.push_back(first);
+        return temp;      
+    }
 };
