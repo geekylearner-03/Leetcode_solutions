@@ -10,6 +10,5 @@ public:
             if(it.second > 1) return it.first;
         }
         return -1;
-
     }
 };
