@@ -1,27 +1,24 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-if (nums.empty()) return 0;  // Edge case: empty input
-
-        std::set<int> st(nums.begin(), nums.end());  // Sorts and removes duplicates
-        int maxLength = 1;  // At least 1 if nums is non-empty
-        int currentLength = 1;
-
-        // Iterate through the sorted set to find consecutive sequences
-        auto it = st.begin();
-        int prev = *it;
-        ++it;
-
-        for (; it != st.end(); ++it) {
-            if (*it == prev + 1) {  // Check if consecutive
-                currentLength++;
-                maxLength = max(maxLength, currentLength);
-            } else {
-                currentLength = 1;  // Reset sequence
-            }
-            prev = *it;
+        int n = nums.size();
+        if(n==0) return 0;
+        int longest = 1;
+        unordered_set<int> st;
+        for(int i=0;i<n;i++){
+            st.insert(nums[i]);
         }
-
-        return maxLength;
+        for(auto it: st){
+            if(st.find(it-1) == st.end()){
+                int cnt = 1;
+                int x = it;
+                while(st.find(x+1) != st.end()){
+                    x=x+1;
+                    cnt = cnt + 1;
+                }
+                longest = max(longest,cnt);
+            }
+        }
+        return longest;
     }
 };
