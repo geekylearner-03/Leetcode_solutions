@@ -27,7 +27,6 @@ public:
        int mini = (int)(v.size()/3) + 1;
        if(cnt1 >= mini) ls.push_back(ele1);
        if(cnt2 >= mini) ls.push_back(ele2);
-       
        return ls;
     }
 };
