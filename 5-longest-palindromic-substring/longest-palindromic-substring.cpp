@@ -1,32 +1,41 @@
 class Solution {
 public:
     string longestPalindrome(string s) {
-        if (s.length() <= 1) {
-            return s;
+        int n = s.size();
+        int start = 0;
+        int longlen = 1;
+
+        // DP table initialization
+        vector<vector<bool>> t(n, vector<bool>(n, false));
+
+        // All substrings of length 1 are palindromes
+        for (int i = 0; i < n; i++) {
+            t[i][i] = true;
         }
 
-        auto expand_from_center = [&](int left, int right) {
-            while (left >= 0 && right < s.length() && s[left] == s[right]) {
-                left--;
-                right++;
-            }
-            return s.substr(left + 1, right - left - 1);
-        };
-
-        string max_str = s.substr(0, 1);
-
-        for (int i = 0; i < s.length() - 1; i++) {
-            string odd = expand_from_center(i, i);
-            string even = expand_from_center(i, i + 1);
-
-            if (odd.length() > max_str.length()) {
-                max_str = odd;
-            }
-            if (even.length() > max_str.length()) {
-                max_str = even;
+        // Substrings of length 2
+        for (int i = 0; i < n - 1; i++) {
+            if (s[i] == s[i + 1]) {
+                t[i][i + 1] = true;
+                start = i;
+                longlen = 2;
             }
         }
 
-        return max_str;
+        // Substrings of length 3 or more
+        for (int l = 3; l <= n; l++) {
+            for (int i = 0; i < n - l + 1; i++) {
+                int j = i + l - 1;
+                if (s[i] == s[j] && t[i + 1][j - 1]) {
+                    t[i][j] = true;
+                    if (l > longlen) {
+                        longlen = l;
+                        start = i;
+                    }
+                }
+            }
+        }
+
+        return s.substr(start, longlen);
     }
 };
