@@ -4,24 +4,24 @@ public:
         int n = s.size();
         string ans;
         string temp;
-        for (int i = n - 1; i >= 0; i--) {
-            if (s[i] == ' ') {
-                if (!temp.empty()) {
-                    reverse(temp.begin(), temp.end());
+        for(int i=n-1; i>=0; i--){
+            if(s[i] == ' '){
+                if(!temp.empty()){
+                    reverse(temp.begin(),temp.end());
                     ans += temp;
                     ans += ' ';
                     temp.clear();
                 }
-            } else {
+            }
+            else{
                 temp += s[i];
             }
         }
-        // Add the last word
-        if (!temp.empty()) {
-            reverse(temp.begin(), temp.end());
+        if(!temp.empty()){
+            reverse(temp.begin(),temp.end());
             ans += temp;
-        } else if (!ans.empty()) {
-            // Remove trailing space if no last word but ans is not empty
+        }
+        else if(!ans.empty()){
             ans.pop_back();
         }
         return ans;
