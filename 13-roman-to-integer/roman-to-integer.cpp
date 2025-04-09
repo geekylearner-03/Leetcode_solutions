@@ -12,11 +12,10 @@ public:
         
         int ans = 0;
         for(int i=0; i<s.size(); i++){
-           if(mpp[s[i]] < mpp[s[i+1]]){
-             ans -= mpp[s[i]]; 
+           if(i+1 < s.size() && mpp[s[i]] < mpp[s[i+1]]){
+                ans -= mpp[s[i]]; 
            } else {
-               ans += mpp[s[i]]; 
-             
+               ans += mpp[s[i]];   
            }
         }
         return ans;
