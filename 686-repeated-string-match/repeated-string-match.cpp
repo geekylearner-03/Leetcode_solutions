@@ -8,12 +8,12 @@ public:
             repeated += a;
             count++;
         }
-        if(repeated.find(b) != string::npos)
+        if(repeated.find(b) != -1)
         return count;
         repeated +=a;
         count++;
         
-        if(repeated.find(b) != string::npos)
+        if(repeated.find(b) != -1)
             return count;
             return -1;
         
