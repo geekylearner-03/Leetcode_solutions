@@ -1,20 +1,23 @@
-#include <string>
-using namespace std;
-
 class Solution {
 public:
     string countAndSay(int n) {
-        if (n == 1) return "1";
-        string prev = countAndSay(n - 1);
-        string result;
-        int count = 1;
-        for (int i = 0; i < prev.size(); ++i) {
-            if (i + 1 < prev.size() && prev[i] == prev[i + 1]) {
-                count++;
-            } else {
-                result += to_string(count) + prev[i];
-                count = 1;
+        if(n==1) return "1";
+        string result = "1";
+        
+        for(int i=2; i<=n; ++i){
+            string current = "";
+            int count = 1;
+            
+            for(int j=1; j<result.size(); ++j){
+                if(result[j] == result[j-1]){
+                    count++;
+                } else {
+                    current += to_string(count)+result[j-1];
+                    count = 1;
+                }
             }
+            current += to_string(count)+result.back();
+            result = current;
         }
         return result;
     }
